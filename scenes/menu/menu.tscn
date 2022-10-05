@@ -35,12 +35,12 @@ anchor_bottom = 1.0
 margin_bottom = -339.0
 
 [node name="Title" type="Label" parent="CenterContainer"]
-margin_left = 145.0
+margin_left = 292.0
 margin_top = 89.0
-margin_right = 878.0
+margin_right = 732.0
 margin_bottom = 172.0
 custom_fonts/font = SubResource( 5 )
-text = "Godot Game Template"
+text = "GOTM JAM #21"
 uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false

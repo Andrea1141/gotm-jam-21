@@ -3,7 +3,6 @@ extends CanvasLayer
 onready var pause := $Pause
 onready var pause_button := $PauseButton
 onready var resume_option := $Pause/VBoxOptions/Resume
-onready var label := $PressESCToOpenMenu
 
 
 func _ready():

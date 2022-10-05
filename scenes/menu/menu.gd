@@ -2,9 +2,6 @@ extends Control
 
 
 func _ready():
-	$Version/GameVersion.text = ProjectSettings.get_setting("application/config/version")
-	$Version/GodotVersion.text = "Godot %s" % Engine.get_version_info().string
-	# needed for gamepads to work
 	$VBoxContainer/PlayButton.grab_focus()
 	if OS.has_feature('HTML5'):
 		$VBoxContainer/ExitButton.queue_free()

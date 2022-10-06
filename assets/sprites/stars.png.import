@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cristallo grande.png-c4ec91d75f191a0ebcbf76bb7fc55692.stex"
+path="res://.import/stars.png-04b15d465f32aaff0b9afb0271fc5272.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cristallo grande.png"
-dest_files=[ "res://.import/cristallo grande.png-c4ec91d75f191a0ebcbf76bb7fc55692.stex" ]
+source_file="res://assets/sprites/stars.png"
+dest_files=[ "res://.import/stars.png-04b15d465f32aaff0b9afb0271fc5272.stex" ]
 
 [params]
 

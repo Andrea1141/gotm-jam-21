@@ -1,13 +1,13 @@
 extends KinematicBody2D
 
-export (int) var speed = 120
+export (int) var speed = 200
 export (int) var jump_speed = -250
 export (int) var gravity = 200
 export (float, 0, 1.0) var friction = 0.1
 export (float, 0, 1.0) var acceleration = 0.25
 
 var velocity = Vector2.ZERO
-var mouse_pos
+var mouse_pos = Vector2.ZERO
 
 var bullet_scene = preload("res://scenes/gameplay/Bullet.tscn")
 
@@ -41,6 +41,9 @@ func get_input():
 		velocity.x = lerp(velocity.x, 0, friction)
 		sprite.animation = "stand"
 	
+	if !is_on_floor():
+		sprite.animation = "jump"
+	
 	if Input.is_action_just_pressed("ui_accept"):
 		shoot()
 
@@ -51,7 +54,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up"):
 		if is_on_floor():
 			velocity.y = jump_speed
-			sprite.animation = "stand"
+			sprite.animation = "jump"
 	if !sprite.flip_h: #if the player is going right
 		mouse_pos = Vector2(clamp(get_global_mouse_position()[0], gun.global_position[0], get_global_mouse_position()[0]), get_global_mouse_position()[1])
 		gun.rotation_degrees = lerp(gun.rotation_degrees, rad2deg(get_angle_to(mouse_pos)), .075)

@@ -51,7 +51,7 @@ gradient = SubResource( 4 )
 
 [sub_resource type="ParticlesMaterial" id=6]
 emission_shape = 2
-emission_box_extents = Vector3( 500, 400, 1 )
+emission_box_extents = Vector3( 700, 600, 1 )
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
@@ -68,21 +68,25 @@ anim_offset_random = 1.0
 material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_left = -350.0
+margin_top = -308.0
+margin_right = 1417.0
+margin_bottom = 896.0
 
 [node name="Dark" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_left = -352.0
+margin_top = -308.0
+margin_right = 1423.0
+margin_bottom = 901.0
 color = Color( 0, 0, 0, 0.929412 )
 
 [node name="Stars" type="Particles2D" parent="."]
 modulate = Color( 1, 1, 1, 0.513726 )
 material = SubResource( 3 )
 position = Vector2( 512, 300 )
-amount = 100
+amount = 150
 lifetime = 20.0
 preprocess = 50.0
 randomness = 1.0

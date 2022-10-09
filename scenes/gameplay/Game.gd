@@ -14,8 +14,19 @@ func pre_start(params):
 	yield(get_tree().create_timer(2), "timeout")
 	print("Done")
 
+func _ready():
+	get_tree().paused = true
 
 # `start()` is called when the graphic transition ends.
 func start():
 	print("gameplay.gd: start() called")
+	var new_dialog = Dialogic.start('Timeline')
+	new_dialog.pause_mode = Node.PAUSE_MODE_PROCESS
+	new_dialog.connect("timeline_end", self, "on_timeline_end")
+	add_child(new_dialog)
+
+
+func on_timeline_end(timeline_name):
+	get_tree().paused = false
+
 

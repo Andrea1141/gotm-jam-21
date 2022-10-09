@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
 var velocity = Vector2(0, 0)
-var speed = 300
+var speed = 500
 
 func _physics_process(delta):
-	var collision = move_and_collide(velocity.normalized() * delta * speed)
+	var _collision = move_and_collide(velocity.normalized() * delta * speed)
 
 
 func _on_VisibilityNotifier2D_screen_exited():

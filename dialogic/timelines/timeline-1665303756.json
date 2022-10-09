@@ -25,12 +25,12 @@
 			"character": "character-1665303706.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Oh no our "
+			"text": "Oh no! My spaceship was destroyed due to the accident! I must find all the parts to repair it"
 		}
 	],
 	"metadata": {
 		"dialogic-version": "1.4.5",
 		"file": "timeline-1665303756.json",
-		"name": "timeline-1665303756"
+		"name": "Timeline"
 	}
 }

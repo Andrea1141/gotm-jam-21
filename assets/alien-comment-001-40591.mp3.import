@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/alien-comment-001-40591.mp3-4d49321f55a70c7131a32f8411f3f32d.mp3str"
+
+[deps]
+
+source_file="res://assets/alien-comment-001-40591.mp3"
+dest_files=[ "res://.import/alien-comment-001-40591.mp3-4d49321f55a70c7131a32f8411f3f32d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/switch-click-and-beep-001a-11602.mp3-50925f959221d50085684ba766e71d3a.mp3str"
+
+[deps]
+
+source_file="res://assets/switch-click-and-beep-001a-11602.mp3"
+dest_files=[ "res://.import/switch-click-and-beep-001a-11602.mp3-50925f959221d50085684ba766e71d3a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,62 @@
+{
+	"events": [
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0.5,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1665303706.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1665303706.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I finally found all the objects, now I can go back to the surface!"
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://assets/big-impact-7054.mp3",
+			"volume": 0
+		},
+		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": false,
+			"wait_seconds": 1,
+			"waiting_skippable": false
+		},
+		{
+			"character": "character-1665303706.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[shake rate=5 level=10]What happened?[/shake] It seems that something exploded!"
+		},
+		{
+			"character": "character-1665303706.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh no, my mask has broken! I must return to my spaceship in less than 90 seconds!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1665351728.json",
+		"name": "Items"
+	}
+}

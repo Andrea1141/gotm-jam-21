@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ufo-takeoff-by-prettysleepy-art-13255 (mp3cut.net).mp3-de2e4ceb9d74aa690fbe0a64eef2e03e.mp3str"
+
+[deps]
+
+source_file="res://assets/ufo-takeoff-by-prettysleepy-art-13255 (mp3cut.net).mp3"
+dest_files=[ "res://.import/ufo-takeoff-by-prettysleepy-art-13255 (mp3cut.net).mp3-de2e4ceb9d74aa690fbe0a64eef2e03e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

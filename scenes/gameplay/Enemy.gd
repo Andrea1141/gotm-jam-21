@@ -2,12 +2,13 @@ class_name Enemy
 extends KinematicBody2D
 
 
-export var speed = Vector2(150.0, 350.0)
+export var speed = Vector2(150.0, 100.0)
+export var facing_right = false
 onready var gravity = ProjectSettings.get("physics/2d/default_gravity")
 
 const FLOOR_NORMAL = Vector2.UP
 
-var _velocity = Vector2.ZERO
+var velocity = Vector2.ZERO
 
 enum State {
 	WALKING,
@@ -15,55 +16,63 @@ enum State {
 }
 
 var _state = State.WALKING
+var life_points = 100
+var damage = 15
 
-onready var platform_detector = $PlatformDetector
-onready var floor_detector_left = $FloorDetectorLeft
-onready var floor_detector_right = $FloorDetectorRight
+onready var floor_detector = $FloorDetector
+onready var roof_detector = $RoofDetector
 onready var sprite = $AnimatedSprite
 onready var animation_player = $AnimationPlayer
 
 
 func _ready():
-	_velocity.x = -speed.x
+	velocity.y = -speed.y
+	$AnimatedSprite.flip_h = facing_right
+	randomize()
 
 
 func _physics_process(delta):
-	_velocity.y += gravity * delta
 	# If the enemy encounters a wall or an edge, the horizontal velocity is flipped.
-	if not floor_detector_left.is_colliding():
-		_velocity.x = speed.x
-	elif not floor_detector_right.is_colliding():
-		_velocity.x = -speed.x
-
-	if is_on_wall():
-		_velocity.x *= -1
-
-	# We only update the y value of _velocity as we want to handle the horizontal movement ourselves.
-	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
-
-	# We flip the Sprite depending on which way the enemy is moving.
-	if _velocity.x > 0:
-		sprite.scale.x = -.02
+	if floor_detector.is_colliding():
+		velocity.y = -speed.y
+	elif roof_detector.is_colliding():
+		velocity.y = speed.y
+	
+	move_and_slide(velocity)
+	
+	var animation = get_new_animation()
+	if animation != animation_player.current_animation:
+		animation_player.play(animation)
+	
+	if life_points <= 0: 
+		destroy()
+		$TextureProgress.value = 0
 	else:
-		sprite.scale.x = .02
+		$TextureProgress.value = life_points
 
+
+func destroy():
+	_state = State.DEAD
+	velocity = Vector2.ZERO
 	var animation = get_new_animation()
 	if animation != animation_player.current_animation:
 		animation_player.play(animation)
 
 
-func destroy():
-	_state = State.DEAD
-	_velocity = Vector2.ZERO
-
-
 func get_new_animation():
 	var animation_new = ""
 	if _state == State.WALKING:
-		if _velocity.x == 0:
-			animation_new = "idle"
-		else:
-			animation_new = "walk"
+		animation_new = "idle"
 	else:
 		animation_new = "destroy"
 	return animation_new
+
+
+func _on_TalkTimer_timeout():
+	var n = randf()
+	if n <= .2:
+		$Talk.play()
+
+func get_damage():
+	life_points = max(life_points - 35, 0)
+	get_node("Hit").play()

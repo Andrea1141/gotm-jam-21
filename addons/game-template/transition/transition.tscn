@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/fonts/open-sans/open-sans-regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/sprites/icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/alieno.png" type="Texture" id=2]
 [ext_resource path="res://addons/game-template/transition/progress.gd" type="Script" id=3]
 [ext_resource path="res://addons/game-template/transition/transition.gd" type="Script" id=4]
 
@@ -31,10 +31,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.16, 0.48, 0.64, 0.96, 1.12, 1.44, 1.6 ),
+"times": PoolRealArray( 0, 0.16, 0.48, 0.64, 0.96, 1.12, 1.4, 1.6 ),
 "transitions": PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ),
 "update": 0,
-"values": [ -90.0, -90.0, 0.0, 0.0, 90.0, 90.0, 0.0, 0.0 ]
+"values": [ -360.0, -360.0, 0.0, 0.0, 360.0, 360.0, 0.0, 0.0 ]
 }
 
 [sub_resource type="DynamicFont" id=4]
@@ -314,15 +314,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -40.0
-margin_top = -99.0
-margin_right = 40.0
-margin_bottom = -19.0
-rect_rotation = -90.0
+margin_left = -20.0
+margin_top = -79.0
+margin_right = 60.0
+margin_bottom = 1.0
+rect_rotation = -360.0
 rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_filter = 2
 texture = ExtResource( 2 )
+expand = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect/Progress/Spinner"]
 autoplay = "idle"
